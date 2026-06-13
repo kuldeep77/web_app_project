@@ -25,7 +25,8 @@ public class KuldeepRestController {
     @Operation(summary = "Get Consultant By Id")
 	public ResponseEntity<ApiResponse<ConsDTO>> getConsultantById(@PathVariable Integer id) {
 		ConsDTO dto = consService.getConsultantById(id);
-	    if (dto == null) {
+		System.out.println("dto ..!! "+dto);
+		if (dto == null) {
 	        return ResponseEntity.notFound().build();
 	    }
 	    ApiResponse<ConsDTO> response =
